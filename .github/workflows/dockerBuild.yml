@@ -53,7 +53,7 @@ jobs:
       - name: Deploy to ECS
         run: |
           aws ecs update-service \
-            --cluster YOUR_ECS_CLUSTER_NAME \
-            --service YOUR_ECS_SERVICE_NAME \
+            --cluster Java-Repo-Project-6-Cluster \
+            --service Java-Repo-Project6-Service \
             --force-new-deployment \
             --region ap-south-2
