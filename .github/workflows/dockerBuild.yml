@@ -44,8 +44,8 @@ jobs:
       - name: Tag Docker Image
         run: |
           docker tag java-repo-project6-docker-image:latest \
-          public.ecr.aws/u7t1z1q1/java-repo-project6-docker-image:latest
-      
+          public.ecr.aws/u7t1z1q1/github-actions-ecr:latest
+
       - name: Push Docker Image to ECR Public
         run: |
-          docker push public.ecr.aws/u7t1z1q1/java-repo-project6-docker-image:latest
+          docker push public.ecr.aws/u7t1z1q1/github-actions-ecr:latest
