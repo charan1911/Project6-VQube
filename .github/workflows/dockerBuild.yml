@@ -1,4 +1,4 @@
-name: BUILD WAR STORE TOMCAT and BUILD DOCKER IMAGE
+name: Build WAR, Docker Image, Push to ECR Public and Deploy to ECS
 
 on:
   push:
@@ -6,29 +6,33 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+
+      # 1. Checkout source code
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      # 2. Setup Java
+      - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
 
-      - name: Build WAR File
+      # 3. Build WAR
+      - name: Build WAR
         run: mvn clean package
 
-      - name: Build Docker Image
-        run: docker build -t java-repo-project6-docker-image:latest .
+      # 4. Verify WAR
+      - name: Verify WAR
+        run: |
+          jar tf target/neontask.war | grep index.html
 
-      - name: Check Docker Image
-        run: docker images
-
+      # 5. Configure AWS
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -36,20 +40,29 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-2
 
-      - name: Login to Amazon ECR Public
+      # 6. Login to ECR Public
+      - name: Login to ECR Public
         run: |
           aws ecr-public get-login-password --region us-east-1 |
-          docker login --username AWS --password-stdin public.ecr.aws   
+          docker login --username AWS --password-stdin public.ecr.aws
 
+      # 7. Build Docker Image
+      - name: Build Docker Image
+        run: |
+          docker build -t java-repo-project6-docker-image:latest .
+
+      # 8. Tag Docker Image
       - name: Tag Docker Image
         run: |
           docker tag java-repo-project6-docker-image:latest \
           public.ecr.aws/u7t1z1q1/github-actions-ecr:latest
 
-      - name: Push Docker Image to ECR Public
+      # 9. Push Image to ECR Public
+      - name: Push Image to ECR Public
         run: |
           docker push public.ecr.aws/u7t1z1q1/github-actions-ecr:latest
 
+      # 10. Deploy new image to ECS
       - name: Deploy to ECS
         run: |
           aws ecs update-service \

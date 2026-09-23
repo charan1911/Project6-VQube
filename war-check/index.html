@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AURA Analytics</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">A</div>
+            <span>AURA</span>
+        </div>
+
+        <nav>
+
+            <a class="active">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a>
+                <span>◈</span>
+                Analytics
+            </a>
+
+            <a>
+                <span>◉</span>
+                Customers
+            </a>
+
+            <a>
+                <span>◇</span>
+                Transactions
+            </a>
+
+            <a>
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="upgrade">
+
+                <div class="sparkle">✦</div>
+
+                <h3>Unlock Pro</h3>
+
+                <p>
+                    Get advanced analytics
+                    and unlimited reports.
+                </p>
+
+                <button>
+                    Upgrade
+                </button>
+
+            </div>
+
+            <div class="profile">
+
+                <div class="avatar">
+                    C
+                </div>
+
+                <div>
+                    <strong>Charan</strong>
+                    <small>Administrator</small>
+                </div>
+
+                <span class="dots">•••</span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div>
+
+                <p class="eyebrow">
+                    DASHBOARD
+                </p>
+
+                <h1>
+                    Good morning, Project 6 FINAL.
+                </h1>
+
+                <p class="welcome">
+                    Here's what's happening with your business today.
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button class="icon-button">
+                    🔔
+                    <span class="notification"></span>
+                </button>
+
+                <button class="date-button">
+                    ◷ &nbsp; Sep 11, 2026
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <span>Total Revenue</span>
+
+                    <div class="stat-icon purple">
+                        $
+                    </div>
+
+                </div>
+
+                <h2>
+                    $128,430
+                </h2>
+
+                <div class="growth positive">
+                    ↑ 18.4%
+                    <span>vs last month</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <span>Active Users</span>
+
+                    <div class="stat-icon blue">
+                        ◉
+                    </div>
+
+                </div>
+
+                <h2>
+                    24,892
+                </h2>
+
+                <div class="growth positive">
+                    ↑ 12.8%
+                    <span>vs last month</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <span>Conversion</span>
+
+                    <div class="stat-icon green">
+                        %
+                    </div>
+
+                </div>
+
+                <h2>
+                    8.42%
+                </h2>
+
+                <div class="growth positive">
+                    ↑ 3.2%
+                    <span>vs last month</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <span>Avg. Order</span>
+
+                    <div class="stat-icon orange">
+                        ◇
+                    </div>
+
+                </div>
+
+                <h2>
+                    $84.20
+                </h2>
+
+                <div class="growth negative">
+                    ↓ 1.4%
+                    <span>vs last month</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+
+        <section class="content-grid">
+
+
+            <!-- REVENUE CHART -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Revenue Overview
+                        </h2>
+
+                        <p>
+                            Monthly performance
+                        </p>
+
+                    </div>
+
+                    <select id="chartSelect">
+
+                        <option>
+                            Last 7 months
+                        </option>
+
+                        <option>
+                            Last 12 months
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart">
+
+                    <div class="y-axis">
+
+                        <span>$40k</span>
+                        <span>$30k</span>
+                        <span>$20k</span>
+                        <span>$10k</span>
+                        <span>$0</span>
+
+                    </div>
+
+                    <div class="chart-area">
+
+                        <div class="grid-lines"></div>
+
+                        <svg
+                            viewBox="0 0 700 260"
+                            preserveAspectRatio="none">
+
+                            <defs>
+
+                                <linearGradient
+                                    id="areaGradient"
+                                    x1="0"
+                                    x2="0"
+                                    y1="0"
+                                    y2="1">
+
+                                    <stop
+                                        offset="0%"
+                                        stop-opacity=".25"/>
+
+                                    <stop
+                                        offset="100%"
+                                        stop-opacity="0"/>
+
+                                </linearGradient>
+
+                            </defs>
+
+                            <path
+                                class="area"
+                                d="M0 205
+                                   C70 180 80 190 130 160
+                                   C190 125 200 160 260 130
+                                   C320 100 350 125 400 90
+                                   C460 50 490 110 540 70
+                                   C600 35 630 70 700 25
+                                   L700 260
+                                   L0 260 Z"/>
+
+                            <path
+                                class="line"
+                                d="M0 205
+                                   C70 180 80 190 130 160
+                                   C190 125 200 160 260 130
+                                   C320 100 350 125 400 90
+                                   C460 50 490 110 540 70
+                                   C600 35 630 70 700 25"/>
+
+                        </svg>
+
+                        <div class="chart-tooltip">
+
+                            <strong>$36,420</strong>
+
+                            <span>September</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="months">
+
+                    <span>Mar</span>
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
+                    <span>Jul</span>
+                    <span>Aug</span>
+                    <span>Sep</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SYSTEM -->
+
+            <div class="panel system-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            System Health
+                        </h2>
+
+                        <p>
+                            Live infrastructure
+                        </p>
+
+                    </div>
+
+                    <span class="live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="health-score">
+
+                    <div class="score-circle">
+
+                        <strong>
+                            98
+                        </strong>
+
+                        <span>
+                            HEALTH
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="services">
+
+                    <div class="service">
+
+                        <div>
+                            <span class="status"></span>
+                            API Gateway
+                        </div>
+
+                        <strong>99.99%</strong>
+
+                    </div>
+
+                    <div class="service">
+
+                        <div>
+                            <span class="status"></span>
+                            Database
+                        </div>
+
+                        <strong>99.97%</strong>
+
+                    </div>
+
+                    <div class="service">
+
+                        <div>
+                            <span class="status"></span>
+                            Storage
+                        </div>
+
+                        <strong>99.99%</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- BOTTOM -->
+
+        <section class="bottom-grid">
+
+
+            <!-- RECENT USERS -->
+
+            <div class="panel users-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Recent Customers
+                        </h2>
+
+                        <p>
+                            Latest activity
+                        </p>
+
+                    </div>
+
+                    <button class="view-btn">
+                        View all →
+                    </button>
+
+                </div>
+
+
+                <div class="users">
+
+                    <div class="user">
+
+                        <div class="user-avatar avatar-purple">
+                            AM
+                        </div>
+
+                        <div class="user-info">
+
+                            <strong>
+                                Alex Morgan
+                            </strong>
+
+                            <span>
+                                alex@example.com
+                            </span>
+
+                        </div>
+
+                        <div class="user-value">
+                            +$420
+                        </div>
+
+                        <span class="user-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="user">
+
+                        <div class="user-avatar avatar-blue">
+                            JS
+                        </div>
+
+                        <div class="user-info">
+
+                            <strong>
+                                James Smith
+                            </strong>
+
+                            <span>
+                                james@example.com
+                            </span>
+
+                        </div>
+
+                        <div class="user-value">
+                            +$280
+                        </div>
+
+                        <span class="user-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="user">
+
+                        <div class="user-avatar avatar-orange">
+                            EW
+                        </div>
+
+                        <div class="user-info">
+
+                            <strong>
+                                Emma Wilson
+                            </strong>
+
+                            <span>
+                                emma@example.com
+                            </span>
+
+                        </div>
+
+                        <div class="user-value">
+                            +$190
+                        </div>
+
+                        <span class="user-status pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="panel actions-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                        <p>
+                            Manage your workspace
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="actions">
+
+                    <button>
+                        <span>＋</span>
+                        New Report
+                    </button>
+
+                    <button>
+                        <span>↗</span>
+                        Export Data
+                    </button>
+
+                    <button>
+                        <span>◈</span>
+                        Add Customer
+                    </button>
+
+                    <button>
+                        <span>⚙</span>
+                        Settings
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+
+            <span>
+                AURA Analytics
+            </span>
+
+            <span>
+                All systems operational · 2026
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
