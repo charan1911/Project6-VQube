@@ -49,3 +49,11 @@ jobs:
       - name: Push Docker Image to ECR Public
         run: |
           docker push public.ecr.aws/u7t1z1q1/github-actions-ecr:latest
+
+      - name: Deploy to ECS
+        run: |
+          aws ecs update-service \
+            --cluster YOUR_ECS_CLUSTER_NAME \
+            --service YOUR_ECS_SERVICE_NAME \
+            --force-new-deployment \
+            --region ap-south-2
